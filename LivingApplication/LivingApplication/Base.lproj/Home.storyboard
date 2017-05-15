@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="3cy-vg-KuK">
             <objects>
-                <viewController id="Q83-KU-nTj" sceneMemberID="viewController">
+                <viewController id="Q83-KU-nTj" customClass="HomeViewController" customModule="LivingApplication" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eMf-dP-RXk"/>
                         <viewControllerLayoutGuide type="bottom" id="GhT-xX-QV8"/>
@@ -27,7 +27,7 @@
         <scene sceneID="DQK-2N-dWX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ehC-TR-Nuq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" image="tabHome" selectedImage="tabHomeHL" id="Wgk-wl-z4m"/>
+                    <tabBarItem key="tabBarItem" title="Item 1" image="btn_home_normal" selectedImage="btn_home_selected" id="Wgk-wl-z4m"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="d6Z-dw-A53">
@@ -45,7 +45,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="tabHome" width="24" height="24"/>
-        <image name="tabHomeHL" width="24" height="24"/>
+        <image name="btn_home_normal" width="24" height="24"/>
+        <image name="btn_home_selected" width="24" height="24"/>
     </resources>
 </document>

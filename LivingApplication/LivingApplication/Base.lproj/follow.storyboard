@@ -27,7 +27,7 @@
         <scene sceneID="SpP-Eh-BrG">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DI7-A1-fqi" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 3" image="tabFocus" selectedImage="tabFocusHL" id="jVe-fs-gdw"/>
+                    <tabBarItem key="tabBarItem" title="Item 3" image="btn_live_normal" selectedImage="btn_live_selected" id="jVe-fs-gdw"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iba-IM-uJg">
@@ -45,7 +45,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="tabFocus" width="24" height="24"/>
-        <image name="tabFocusHL" width="24" height="24"/>
+        <image name="btn_live_normal" width="30" height="24"/>
+        <image name="btn_live_selected" width="30" height="24"/>
     </resources>
 </document>

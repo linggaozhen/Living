@@ -27,7 +27,7 @@
         <scene sceneID="pSC-oT-8p0">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="h19-kP-yCn" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 4" image="tabMine" selectedImage="tabMineHL" id="RP1-ng-gor"/>
+                    <tabBarItem key="tabBarItem" title="Item 4" image="btn_user_normal" selectedImage="btn_user_selected" id="RP1-ng-gor"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="RBM-1Q-746">
@@ -45,7 +45,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="tabMine" width="24" height="24"/>
-        <image name="tabMineHL" width="24" height="24"/>
+        <image name="btn_user_normal" width="24" height="24"/>
+        <image name="btn_user_selected" width="24" height="24"/>
     </resources>
 </document>
