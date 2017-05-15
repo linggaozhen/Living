@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DI7-A1-fqi">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="4bV-x9-es0">
+            <objects>
+                <viewController id="Wco-v8-SRa" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dqk-SX-4jd"/>
+                        <viewControllerLayoutGuide type="bottom" id="SeH-tx-6Tf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vSv-Kd-xoI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="YAe-p6-xdN"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KCF-8d-fDQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1609" y="956"/>
+        </scene>
+        <!--Item 3-->
+        <scene sceneID="SpP-Eh-BrG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DI7-A1-fqi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item 3" image="tabFocus" selectedImage="tabFocusHL" id="jVe-fs-gdw"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iba-IM-uJg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Wco-v8-SRa" kind="relationship" relationship="rootViewController" id="eFd-lz-WEc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s9t-Us-yl1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="623" y="996"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="tabFocus" width="24" height="24"/>
+        <image name="tabFocusHL" width="24" height="24"/>
+    </resources>
+</document>
