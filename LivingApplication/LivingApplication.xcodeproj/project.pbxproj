@@ -30,6 +30,9 @@
 		929A73BA1EC36D530022791D /* live.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 929A73B81EC36D530022791D /* live.storyboard */; };
 		929A73C11EC9710D0022791D /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929A73BE1EC9710D0022791D /* MainTabBarController.swift */; };
 		929A73CF1EC973830022791D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929A73CE1EC973830022791D /* HomeViewController.swift */; };
+		92F161811ECEF47D004D5093 /* NetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F161801ECEF47D004D5093 /* NetworkTool.swift */; };
+		92F259331ECF17C7006E8CBD /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F259321ECF17C7006E8CBD /* BaseViewModel.swift */; };
+		92F259361ECF2B42006E8CBD /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F259351ECF2B42006E8CBD /* HomeViewModel.swift */; };
 		B9B21D0B327BC0D35B38A2E4 /* Pods_LivingApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6CABE576E32D68AA1CFD60B /* Pods_LivingApplication.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +64,9 @@
 		929A73B91EC36D530022791D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LivingApplication/Base.lproj/live.storyboard; sourceTree = SOURCE_ROOT; };
 		929A73BE1EC9710D0022791D /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		929A73CE1EC973830022791D /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		92F161801ECEF47D004D5093 /* NetworkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTool.swift; sourceTree = "<group>"; };
+		92F259321ECF17C7006E8CBD /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		92F259351ECF2B42006E8CBD /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		B6CABE576E32D68AA1CFD60B /* Pods_LivingApplication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LivingApplication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -160,6 +166,7 @@
 		929A73A31EC35FF50022791D /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				92F259341ECF2B36006E8CBD /* ViewModel */,
 				929A73C21EC971560022791D /* Controller */,
 				929A73C31EC971560022791D /* Model */,
 				929A73C41EC971560022791D /* View */,
@@ -180,6 +187,7 @@
 		929A73A51EC35FF50022791D /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				92F259311ECF16C0006E8CBD /* ViewModel */,
 				929A73BD1EC9710D0022791D /* Controller */,
 				929A73BF1EC9710D0022791D /* Model */,
 				929A73C01EC9710D0022791D /* View */,
@@ -202,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				9223185D1EC99D7000D9C0A8 /* Common.swift */,
+				92F161801ECEF47D004D5093 /* NetworkTool.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -324,6 +333,22 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		92F259311ECF16C0006E8CBD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				92F259321ECF17C7006E8CBD /* BaseViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		92F259341ECF2B36006E8CBD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				92F259351ECF2B42006E8CBD /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -459,6 +484,8 @@
 				922318711ECC78BC00D9C0A8 /* PrettyCollectionViewCell.swift in Sources */,
 				9223186D1ECC6CB800D9C0A8 /* NormalCollectionCell.swift in Sources */,
 				9223185A1EC980CB00D9C0A8 /* UIBarButtonItem+extension.swift in Sources */,
+				92F259331ECF17C7006E8CBD /* BaseViewModel.swift in Sources */,
+				92F161811ECEF47D004D5093 /* NetworkTool.swift in Sources */,
 				922318691ECC64F100D9C0A8 /* CollectionHeaderView.swift in Sources */,
 				929A73C11EC9710D0022791D /* MainTabBarController.swift in Sources */,
 				922318661ECC388C00D9C0A8 /* RecommerController.swift in Sources */,
@@ -467,6 +494,7 @@
 				929A738F1EC35DCF0022791D /* AppDelegate.swift in Sources */,
 				9223185E1EC99D7000D9C0A8 /* Common.swift in Sources */,
 				929A73CF1EC973830022791D /* HomeViewController.swift in Sources */,
+				92F259361ECF2B42006E8CBD /* HomeViewModel.swift in Sources */,
 				922318641ECAC11A00D9C0A8 /* UIColor+extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

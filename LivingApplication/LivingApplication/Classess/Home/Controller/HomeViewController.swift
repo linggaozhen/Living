@@ -49,16 +49,28 @@ extension HomeViewController{
     
     private func setupUI() -> Void {
         automaticallyAdjustsScrollViewInsets = false
-        // 设置导航栏
+        // 1 设置导航栏
         setNavigationItem()
         
-        // 设置titleView
+        // 2 设置titleView
         setTitleView()
         
-        // 设置contentView
+        // 3 设置contentView
         setcontentView()
+        
+        // 4 请求数据
+        requestData()
+        
     }
     
+    
+    /**
+     请求后端数据
+     */
+    private func requestData(){
+        HomeViewModel.loadRecommerData()
+        
+    }
     
     /**
      setTitleView
