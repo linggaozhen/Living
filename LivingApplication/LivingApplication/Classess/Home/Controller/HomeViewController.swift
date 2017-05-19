@@ -18,10 +18,19 @@ class HomeViewController: UIViewController {
         return titleView
     }()
     // contentView 懒加载
-    lazy var contentView : pageContentView = {
-        let controller = UIViewController()
+    lazy var contentView : pageContentView = {[weak self] in
+        // 通过一个数组保存控制器
+        var controllerArray = [UIViewController]()
+        let recommerController = RecommerController()
+        controllerArray.append(recommerController)
+        for i in 0...2 {
+          let viewController = UIViewController()
+            viewController.view.backgroundColor = UIColor.init(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)))
+            controllerArray.append(viewController)
+        }
+        // 初始化contentView，把数组传进去
+        let contentView = pageContentView(frame: CGRectZero, childViewController: controllerArray, parentController: self!)
         
-        let contentView = pageContentView(frame: CGRectZero, childViewController: [controller], parentController: self)
         return contentView
     }()
     
@@ -50,6 +59,10 @@ extension HomeViewController{
         setcontentView()
     }
     
+    
+    /**
+     setTitleView
+     */
     private func setTitleView(){
         view.addSubview(self.pageTitleView)
     }
@@ -57,11 +70,15 @@ extension HomeViewController{
     private func setcontentView(){
         let contentViewY = self.pageTitleView.frame.maxY
         
-        contentView.frame = CGRect(x: 0, y: contentViewY, width: KScreenW, height: KScreenH - contentViewY)
+        contentView.frame = CGRect(x: 0, y: contentViewY, width: KScreenW, height: KScreenH - contentViewY - 44)
+        contentView.scrollerDelegate = self
         contentView.backgroundColor = UIColor.yellowColor()
         view.addSubview(contentView)
     }
     
+    /**
+     setNavigationItem
+     */
     private func setNavigationItem(){
     
         
@@ -86,12 +103,20 @@ extension HomeViewController{
     }
 }
 
-
+// MARK: - titleView Label 的点击事件
 extension HomeViewController : pageTitleViewDelegate{
     func pageLabelClick(selectIndext: Int, titleView: PageTitleView) {
-        print(selectIndext)
+        self.contentView.pageTitleLabelClick(selectIndext)
     }
 }
 
+// contentView的代理事件
+extension HomeViewController : pageContentViewScrollerDelegate{
+
+    func scrollerProgress(progress: CGFloat, beginIndext: Int, targetIndext: Int) {
+//        print("begin \(beginIndext) target \(targetIndext) progress \(progress)")
+        self.pageTitleView.changeLineFrameAndLabelColor(beginIndext, targetIndext: targetIndext, progress: progress)
+    }
+}
 
 

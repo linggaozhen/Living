@@ -12,6 +12,10 @@ protocol pageTitleViewDelegate : class {
     func pageLabelClick(selectIndext : Int, titleView : PageTitleView)
 }
 
+// MARK:- 定义常量
+private let KNormalColor : (CGFloat,CGFloat,CGFloat) = (85,85,85)
+private let kSelectColor : (CGFloat,CGFloat,CGFloat) = (255, 128, 0)
+
 class PageTitleView: UIView {
         /// 懒加载
     lazy var labelArray : [UILabel] = [UILabel]()
@@ -70,7 +74,7 @@ extension PageTitleView{
             label.text = title
             label.tag = indext
             label.textAlignment = .Center
-            label.textColor = UIColor.lightGrayColor()
+            label.textColor = UIColor.init(r: KNormalColor.0, g: KNormalColor.1, b: KNormalColor.2)
             let labelX = CGFloat(indext) * labelW
             
             label.frame = CGRect(x: labelX, y: labelY, width: labelW, height: labelH)
@@ -87,7 +91,7 @@ extension PageTitleView{
         let w = frame.size.width
         let h : CGFloat = 1
         let y = frame.size.height - h
-        bottomLine.backgroundColor = UIColor.lightGrayColor()
+        bottomLine.backgroundColor = UIColor.init(r: kSelectColor.0, g: kSelectColor.1, b: kSelectColor.2)
 //        addSubview(bottomLine)
         bottomLine.frame = CGRect(x: x, y: y, width: w, height: h)
         
@@ -105,7 +109,7 @@ extension PageTitleView{
         self.scrollview.addSubview(scrollerLine)
         let lineH : CGFloat = 2
         
-        scrollerLine.frame = CGRect(x: firstLabel.frame.origin.x, y: frame.size.height - lineH - 1, width: firstLabel.frame.size.width, height: lineH)
+        scrollerLine.frame = CGRect(x: firstLabel.frame.origin.x, y: frame.size.height - lineH, width: firstLabel.frame.size.width, height: lineH)
         
         
     }
@@ -116,11 +120,11 @@ extension PageTitleView{
     
     @objc private func labelTapClick(tap : UITapGestureRecognizer){
         guard let selectLable = tap.view as? UILabel else {return}
-        selectLable.textColor = UIColor.orangeColor()
+        selectLable.textColor = UIColor.init(r: kSelectColor.0, g: kSelectColor.1, b: kSelectColor.2)
         
         let oldLabel = self.labelArray[self.currentIndext]
         self.currentIndext = selectLable.tag
-        oldLabel.textColor = UIColor.lightGrayColor()
+        oldLabel.textColor = UIColor.init(r: KNormalColor.0, g: KNormalColor.1, b: KNormalColor.2)
         UIView.animateWithDuration(0.25) { [weak self] in
             self!.scrollerLine.frame.origin.x = selectLable.frame.origin.x
         }
@@ -131,6 +135,27 @@ extension PageTitleView{
 }
 
 
+extension PageTitleView{
+    func changeLineFrameAndLabelColor(sourceIndext : Int, targetIndext : Int, progress : CGFloat) -> Void {
+//        print("sourceIndex \(sourceIndext) targetIndext \(targetIndext) progress \(progress)")
+        // 取出开始label
+        let sourceLabel = self.labelArray[sourceIndext]
+        // 取出目标label
+        let targetLabel = self.labelArray[targetIndext]
+        
+        // 设置滚动条
+        let totalX = targetLabel.frame.origin.x - sourceLabel.frame.origin.x
+        let moveX = totalX * progress
+        scrollerLine.frame.origin.x = sourceLabel.frame.origin.x + moveX
+        
+        // 设置label的颜色渐变
+        let colorDelta = (kSelectColor.0 - KNormalColor.0,kSelectColor.1 - KNormalColor.1,kSelectColor.2 - KNormalColor.2)
+        sourceLabel.textColor = UIColor.init(r: kSelectColor.0 - colorDelta.0 * progress, g: kSelectColor.1 - colorDelta.1 * progress, b: kSelectColor.2 - colorDelta.2 * progress)
+        targetLabel.textColor = UIColor.init(r: KNormalColor.0 + colorDelta.0 * progress, g: KNormalColor.1 + colorDelta.1 * progress, b: KNormalColor.2 + colorDelta.2 * progress)
+        
+        self.currentIndext = targetIndext
+    }
+}
 
 
 

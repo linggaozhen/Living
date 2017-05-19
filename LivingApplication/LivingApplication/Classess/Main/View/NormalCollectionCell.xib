@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="NormalCollectionCell" customModule="LivingApplication" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="357" height="166"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="357" height="166"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="美女直播，大家快来看" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMB-ti-mTE">
+                        <rect key="frame" x="0.0" y="135" width="357" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="9vc-Qu-T3m"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Img_default" translatesAutoresizingMaskIntoConstraints="NO" id="hqL-PD-53T">
+                        <rect key="frame" x="0.0" y="0.0" width="357" height="125"/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gkA-CQ-18P">
+                        <rect key="frame" x="5" y="104" width="332" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <inset key="titleEdgeInsets" minX="3" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <state key="normal" title="美女直播" image="Image_online">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezV-9M-gsX">
+                        <rect key="frame" x="252" y="5" width="100" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="Ug0-LM-Zbi"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="9" maxY="0.0"/>
+                        <state key="normal" title="1314" image="ico_location"/>
+                    </button>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="bMB-ti-mTE" secondAttribute="bottom" constant="10" id="Fav-Sk-pDW"/>
+                <constraint firstItem="gkA-CQ-18P" firstAttribute="trailing" secondItem="hqL-PD-53T" secondAttribute="trailing" constant="-20" id="Iyw-zu-WRE"/>
+                <constraint firstItem="hqL-PD-53T" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Npk-6i-pwr"/>
+                <constraint firstAttribute="trailing" secondItem="hqL-PD-53T" secondAttribute="trailing" id="TEM-vw-xWU"/>
+                <constraint firstAttribute="trailing" secondItem="bMB-ti-mTE" secondAttribute="trailing" id="Uac-Ft-hum"/>
+                <constraint firstItem="gkA-CQ-18P" firstAttribute="bottom" secondItem="hqL-PD-53T" secondAttribute="bottom" constant="-5" id="aiU-a9-xBx"/>
+                <constraint firstItem="gkA-CQ-18P" firstAttribute="leading" secondItem="hqL-PD-53T" secondAttribute="leading" constant="5" id="ggz-9J-7PI"/>
+                <constraint firstItem="ezV-9M-gsX" firstAttribute="top" secondItem="hqL-PD-53T" secondAttribute="top" constant="5" id="gjN-XV-JL2"/>
+                <constraint firstItem="bMB-ti-mTE" firstAttribute="top" secondItem="hqL-PD-53T" secondAttribute="bottom" constant="10" id="h5N-Eo-k0H"/>
+                <constraint firstItem="bMB-ti-mTE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="kSm-3z-mz7"/>
+                <constraint firstItem="ezV-9M-gsX" firstAttribute="trailing" secondItem="hqL-PD-53T" secondAttribute="trailing" constant="-5" id="kfJ-lL-RTD"/>
+                <constraint firstItem="hqL-PD-53T" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="wUF-nU-YvN"/>
+            </constraints>
+            <size key="customSize" width="357" height="166"/>
+            <connections>
+                <outlet property="backgroundImageView" destination="hqL-PD-53T" id="j7d-Gt-pol"/>
+            </connections>
+            <point key="canvasLocation" x="387.5" y="261"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="Image_online" width="16" height="16"/>
+        <image name="Img_default" width="172" height="103"/>
+        <image name="ico_location" width="12" height="12"/>
+    </resources>
+</document>
