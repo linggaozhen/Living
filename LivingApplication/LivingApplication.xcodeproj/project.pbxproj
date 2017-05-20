@@ -33,6 +33,8 @@
 		92F161811ECEF47D004D5093 /* NetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F161801ECEF47D004D5093 /* NetworkTool.swift */; };
 		92F259331ECF17C7006E8CBD /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F259321ECF17C7006E8CBD /* BaseViewModel.swift */; };
 		92F259361ECF2B42006E8CBD /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F259351ECF2B42006E8CBD /* HomeViewModel.swift */; };
+		92F259381ECF44DA006E8CBD /* AnchorGorup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F259371ECF44DA006E8CBD /* AnchorGorup.swift */; };
+		92F2593A1ECF49DD006E8CBD /* RoomListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F259391ECF49DD006E8CBD /* RoomListModel.swift */; };
 		B9B21D0B327BC0D35B38A2E4 /* Pods_LivingApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6CABE576E32D68AA1CFD60B /* Pods_LivingApplication.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +69,8 @@
 		92F161801ECEF47D004D5093 /* NetworkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTool.swift; sourceTree = "<group>"; };
 		92F259321ECF17C7006E8CBD /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		92F259351ECF2B42006E8CBD /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		92F259371ECF44DA006E8CBD /* AnchorGorup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorGorup.swift; sourceTree = "<group>"; };
+		92F259391ECF49DD006E8CBD /* RoomListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomListModel.swift; sourceTree = "<group>"; };
 		B6CABE576E32D68AA1CFD60B /* Pods_LivingApplication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LivingApplication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -226,6 +230,8 @@
 		929A73BF1EC9710D0022791D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				92F259371ECF44DA006E8CBD /* AnchorGorup.swift */,
+				92F259391ECF49DD006E8CBD /* RoomListModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -485,6 +491,8 @@
 				9223186D1ECC6CB800D9C0A8 /* NormalCollectionCell.swift in Sources */,
 				9223185A1EC980CB00D9C0A8 /* UIBarButtonItem+extension.swift in Sources */,
 				92F259331ECF17C7006E8CBD /* BaseViewModel.swift in Sources */,
+				92F2593A1ECF49DD006E8CBD /* RoomListModel.swift in Sources */,
+				92F259381ECF44DA006E8CBD /* AnchorGorup.swift in Sources */,
 				92F161811ECEF47D004D5093 /* NetworkTool.swift in Sources */,
 				922318691ECC64F100D9C0A8 /* CollectionHeaderView.swift in Sources */,
 				929A73C11EC9710D0022791D /* MainTabBarController.swift in Sources */,
