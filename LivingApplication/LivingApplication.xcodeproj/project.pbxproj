@@ -35,6 +35,7 @@
 		92F259361ECF2B42006E8CBD /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F259351ECF2B42006E8CBD /* HomeViewModel.swift */; };
 		92F259381ECF44DA006E8CBD /* AnchorGorup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F259371ECF44DA006E8CBD /* AnchorGorup.swift */; };
 		92F2593A1ECF49DD006E8CBD /* RoomListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F259391ECF49DD006E8CBD /* RoomListModel.swift */; };
+		92F2593C1ED02525006E8CBD /* NSDate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F2593B1ED02525006E8CBD /* NSDate+Extension.swift */; };
 		B9B21D0B327BC0D35B38A2E4 /* Pods_LivingApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6CABE576E32D68AA1CFD60B /* Pods_LivingApplication.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		92F259351ECF2B42006E8CBD /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		92F259371ECF44DA006E8CBD /* AnchorGorup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorGorup.swift; sourceTree = "<group>"; };
 		92F259391ECF49DD006E8CBD /* RoomListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomListModel.swift; sourceTree = "<group>"; };
+		92F2593B1ED02525006E8CBD /* NSDate+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Extension.swift"; sourceTree = "<group>"; };
 		B6CABE576E32D68AA1CFD60B /* Pods_LivingApplication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LivingApplication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -153,6 +155,7 @@
 			children = (
 				922318591EC980CB00D9C0A8 /* UIBarButtonItem+extension.swift */,
 				922318631ECAC11A00D9C0A8 /* UIColor+extension.swift */,
+				92F2593B1ED02525006E8CBD /* NSDate+Extension.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -499,6 +502,7 @@
 				922318661ECC388C00D9C0A8 /* RecommerController.swift in Sources */,
 				922318601EC9F8D600D9C0A8 /* pageContentView.swift in Sources */,
 				9223185C1EC9993D00D9C0A8 /* PageTitleView.swift in Sources */,
+				92F2593C1ED02525006E8CBD /* NSDate+Extension.swift in Sources */,
 				929A738F1EC35DCF0022791D /* AppDelegate.swift in Sources */,
 				9223185E1EC99D7000D9C0A8 /* Common.swift in Sources */,
 				929A73CF1EC973830022791D /* HomeViewController.swift in Sources */,

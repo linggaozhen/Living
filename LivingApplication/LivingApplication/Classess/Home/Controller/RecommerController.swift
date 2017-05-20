@@ -21,6 +21,7 @@ private let headerRuserID = "headerID"
 class RecommerController: UIViewController {
     
     /// 懒加载
+    lazy var DataSourceArray : [AnchorGorup] = [AnchorGorup]()
     lazy var collectionView : UICollectionView = {
         
         // 流水布局
@@ -47,10 +48,20 @@ class RecommerController: UIViewController {
         view.backgroundColor = UIColor.greenColor()
         
         setUI()
+        requestData()
     }
 
 
  
+}
+
+extension RecommerController{
+    private func requestData(){
+        HomeViewModel.loadRecommerData { (modelArray) in
+            self.DataSourceArray = modelArray
+            self.collectionView.reloadData()
+        }
+    }
 }
 
 
@@ -68,14 +79,13 @@ extension RecommerController{
 extension RecommerController : UICollectionViewDataSource{
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 18
+        return self.DataSourceArray.count
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 0 {
-            return 8
-        }
-        return 4
+    
+        return self.DataSourceArray[section].arrayForRoomListModel.count
+        
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -89,10 +99,14 @@ extension RecommerController : UICollectionViewDataSource{
         
     }
     
+    // HeaderView
     func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
-        let cellHeader = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: headerRuserID, forIndexPath: indexPath)
-        cellHeader.backgroundColor = UIColor.whiteColor()
-        return cellHeader
+        // 创建View
+        let cellHeader = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: headerRuserID, forIndexPath: indexPath) as? CollectionHeaderView
+        // 设置view的属性和数据
+        cellHeader?.groupMoel = self.DataSourceArray[indexPath.section]
+        cellHeader!.backgroundColor = UIColor.whiteColor()
+        return cellHeader!
     }
 }
 

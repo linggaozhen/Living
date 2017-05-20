@@ -16,27 +16,79 @@ import UIKit
 
 
 class HomeViewModel: NSObject {
+    
+}
 
+extension HomeViewModel{
     // 首页推荐模块的数据请求
-    class func loadRecommerData(){
+    class func loadRecommerData(finishCallBack : (modelArray : [AnchorGorup]) -> ()){
         
-        let nowInterval = Int(NSDate().timeIntervalSince1970)
-//        print(nowInterval)
-//        let dic = ["limit" : "4", "offset" : "0", "time" : "\(nowInterval)"]
-//        NetworkTool.netWorkToolRequestData(.GetMethod, URL: "http://capi.douyucdn.cn/api/v1/getHotCate", parameter: dic) { (responeValue) in
-//            print(responeValue)
-//        }
+        
+        let nowInterval = NSDate.timeSince1970()
+        var groupArray : [AnchorGorup] = [AnchorGorup]()
+        
+        
+        //最热
+        let hottestGroupModel : AnchorGorup = AnchorGorup()
+        hottestGroupModel.tag_name = "最热"
+        hottestGroupModel.icon_url = ""
+        // 颜值
+        let prettyGroupModel : AnchorGorup = AnchorGorup()
+        prettyGroupModel.tag_name = "颜值"
+        prettyGroupModel.icon_url = "home_header_normal"
+        
+        let DGroup = dispatch_group_create()
+        
+        
+        
+        // 请求推荐模块的第一部分数据
+        dispatch_group_enter(DGroup)
+        NetworkTool.netWorkToolRequestData(.GetMethod, URL: "http://capi.douyucdn.cn/api/v1/getbigDataRoom?time=\(nowInterval)") { (responeValue) in
+            guard let dicvalue = responeValue as? [String : AnyObject] else {return}
+            guard let dataArray = dicvalue["data"] as? [[String : AnyObject]] else {return}
+            for dictionary in dataArray {
+                let RecommmerFirstModel = RoomListModel.init(dic: dictionary)
+                hottestGroupModel.arrayForRoomListModel.append(RecommmerFirstModel)
+            }
+            dispatch_group_leave(DGroup)
+        }
+        
+        // 请求推荐模块第二部分数据
+        dispatch_group_enter(DGroup)
+        NetworkTool.netWorkToolRequestData(.GetMethod, URL: "http://capi.douyucdn.cn/api/v1/getVerticalRoom?limit=4&offset=0&time=\(nowInterval)") { (responeValue) in
+            guard let dicValue = responeValue as? [String : AnyObject] else {return}
+            guard let dataArray = dicValue["data"] as? [[String : AnyObject]] else {return}
+            for dictionary in dataArray {
+                let model = RoomListModel.init(dic: dictionary)
+                // 把RoomList模型保存到AnchorGroup中
+                prettyGroupModel.arrayForRoomListModel.append(model)
+            }
+            dispatch_group_leave(DGroup)
+        }
+        
+        // 请求推荐模块第三部分数据
+        dispatch_group_enter(DGroup)
         NetworkTool.netWorkToolRequestData(.GetMethod, URL: "http://capi.douyucdn.cn/api/v1/getHotCate?limit=4&offset=0&time=\(nowInterval)") { (responeValue) in
+            
             guard let responeDic = responeValue as? [String : AnyObject] else {return}
             
             guard let dataArray = responeDic["data"] as? [[String : AnyObject]] else {return}
-            for i in 0..<dataArray.count {
-                let dic = dataArray[i]
-                let groupModel = AnchorGorup.init(dic: dic)
-                let listModel : RoomListModel = groupModel.arrayForRoomListModel[0]
-                print(" \(listModel.room_name)")
+            for dictionary in dataArray {
+                // 每组数据模型
+                let groupModel = AnchorGorup.init(dic: dictionary)
+                groupArray.append(groupModel)
             }
+            dispatch_group_leave(DGroup)
         }
+        
+        // 所有数据请求后，进行排序
+        dispatch_group_notify(DGroup, dispatch_get_main_queue()) { 
+            groupArray.insert(prettyGroupModel, atIndex: 0)
+            groupArray.insert(hottestGroupModel, atIndex: 0)
+            finishCallBack(modelArray: groupArray)
+        }
+        
+        
     }
-    
+
 }

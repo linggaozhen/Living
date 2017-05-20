@@ -58,19 +58,10 @@ extension HomeViewController{
         // 3 设置contentView
         setcontentView()
         
-        // 4 请求数据
-        requestData()
-        
+     
     }
     
-    
-    /**
-     请求后端数据
-     */
-    private func requestData(){
-        HomeViewModel.loadRecommerData()
-        
-    }
+   
     
     /**
      setTitleView
