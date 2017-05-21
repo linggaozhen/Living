@@ -71,6 +71,7 @@ extension RecommerController{
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.autoresizingMask = [.FlexibleWidth,.FlexibleHeight]
+        collectionView.contentInset = UIEdgeInsetsMake(0, 0, 160, 0)
         view.addSubview(collectionView)
     }
 }

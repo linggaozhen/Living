@@ -29,7 +29,7 @@ class HomeViewController: UIViewController {
             controllerArray.append(viewController)
         }
         // 初始化contentView，把数组传进去
-        let contentView = pageContentView(frame: CGRectZero, childViewController: controllerArray, parentController: self!)
+        let contentView = pageContentView(frame: (self?.view.bounds)!, childViewController: controllerArray, parentController: self!)
         
         return contentView
     }()
