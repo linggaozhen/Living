@@ -90,13 +90,18 @@ extension RecommerController : UICollectionViewDataSource{
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
+        let roomListModel = self.DataSourceArray[indexPath.section].arrayForRoomListModel[indexPath.item]
+        
         if indexPath.section == 1 {
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(prettyCellID, forIndexPath: indexPath)
-            return cell
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(prettyCellID, forIndexPath: indexPath) as? PrettyCollectionViewCell
+            cell!.listRoomModel = roomListModel
+            return cell!
         }
         
-        let NormalCell = collectionView.dequeueReusableCellWithReuseIdentifier(CellID, forIndexPath: indexPath)
-        return NormalCell
+        let NormalCell = collectionView.dequeueReusableCellWithReuseIdentifier(CellID, forIndexPath: indexPath) as? NormalCollectionCell
+        NormalCell!.listRoom = roomListModel
+        return NormalCell!
         
     }
     

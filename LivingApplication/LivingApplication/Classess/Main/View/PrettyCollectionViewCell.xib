@@ -29,41 +29,45 @@
                             <constraint firstAttribute="height" constant="21" id="irg-s5-Luh"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="live_cell_default_phone" translatesAutoresizingMaskIntoConstraints="NO" id="SsL-wX-PhK">
                         <rect key="frame" x="0.0" y="0.0" width="296" height="137"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000在线" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5v-kr-6QO">
-                        <rect key="frame" x="206" y="5" width="80" height="16"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.23389991554054054" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="80" id="xPJ-4A-MuN"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWu-8u-vMN">
+                        <rect key="frame" x="247" y="5" width="44" height="26"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.29930320945945948" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <state key="normal" title="在线人数">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
+                <constraint firstItem="WWu-8u-vMN" firstAttribute="top" secondItem="SsL-wX-PhK" secondAttribute="top" constant="5" id="19o-40-XE5"/>
                 <constraint firstAttribute="trailing" secondItem="YNv-3N-8Z5" secondAttribute="trailing" constant="10" id="A7u-Ul-IfP"/>
                 <constraint firstItem="YNv-3N-8Z5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="BLM-Rc-St2"/>
                 <constraint firstItem="sJC-El-AEd" firstAttribute="top" secondItem="SsL-wX-PhK" secondAttribute="bottom" constant="5" id="FyL-l8-cMD"/>
                 <constraint firstAttribute="trailing" secondItem="sJC-El-AEd" secondAttribute="trailing" constant="10" id="NvL-Y3-gaR"/>
                 <constraint firstItem="SsL-wX-PhK" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="QE7-F2-x9Y"/>
                 <constraint firstItem="YNv-3N-8Z5" firstAttribute="top" secondItem="sJC-El-AEd" secondAttribute="bottom" constant="5" id="XPh-J8-sM7"/>
-                <constraint firstItem="J5v-kr-6QO" firstAttribute="trailing" secondItem="SsL-wX-PhK" secondAttribute="trailing" constant="-10" id="Y8a-cv-gAe"/>
                 <constraint firstItem="sJC-El-AEd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="Yzl-1u-ZpS"/>
-                <constraint firstItem="J5v-kr-6QO" firstAttribute="top" secondItem="SsL-wX-PhK" secondAttribute="top" constant="5" id="bAg-gX-M8O"/>
+                <constraint firstItem="WWu-8u-vMN" firstAttribute="trailing" secondItem="SsL-wX-PhK" secondAttribute="trailing" constant="-5" id="btD-YA-T91"/>
                 <constraint firstAttribute="trailing" secondItem="SsL-wX-PhK" secondAttribute="trailing" id="dTr-fJ-TYG"/>
                 <constraint firstAttribute="bottom" secondItem="YNv-3N-8Z5" secondAttribute="bottom" constant="5" id="hOV-0t-e1b"/>
                 <constraint firstItem="SsL-wX-PhK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="pEJ-vh-VDy"/>
             </constraints>
             <size key="customSize" width="296" height="195"/>
-            <point key="canvasLocation" x="336" y="283.5"/>
+            <connections>
+                <outlet property="NikNameLabel" destination="sJC-El-AEd" id="OxH-gG-N46"/>
+                <outlet property="cityButton" destination="YNv-3N-8Z5" id="6nt-sI-EIS"/>
+                <outlet property="iconImageView" destination="SsL-wX-PhK" id="mpy-pC-F8g"/>
+                <outlet property="onLineButton" destination="WWu-8u-vMN" id="jXZ-jK-77I"/>
+            </connections>
+            <point key="canvasLocation" x="463" y="279.5"/>
         </collectionViewCell>
     </objects>
     <resources>

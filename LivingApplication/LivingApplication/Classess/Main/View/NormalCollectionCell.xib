@@ -18,7 +18,7 @@
                             <constraint firstAttribute="height" constant="21" id="9vc-Qu-T3m"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Img_default" translatesAutoresizingMaskIntoConstraints="NO" id="hqL-PD-53T">
@@ -60,7 +60,10 @@
             </constraints>
             <size key="customSize" width="357" height="166"/>
             <connections>
-                <outlet property="backgroundImageView" destination="hqL-PD-53T" id="j7d-Gt-pol"/>
+                <outlet property="RoomNameLabel" destination="bMB-ti-mTE" id="0V7-jh-oAz"/>
+                <outlet property="iconImageView" destination="hqL-PD-53T" id="mmq-fG-dhL"/>
+                <outlet property="nikNameButton" destination="gkA-CQ-18P" id="eZK-NO-Kxn"/>
+                <outlet property="onLineButton" destination="ezV-9M-gsX" id="tTk-tH-W2q"/>
             </connections>
             <point key="canvasLocation" x="387.5" y="261"/>
         </collectionViewCell>
