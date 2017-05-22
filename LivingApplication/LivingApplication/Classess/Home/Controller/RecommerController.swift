@@ -22,6 +22,18 @@ class RecommerController: UIViewController {
     
     /// 懒加载
     lazy var DataSourceArray : [AnchorGorup] = [AnchorGorup]()
+    lazy var cycyleArrayData : [CycleModel] = [CycleModel]()
+    lazy var cyclyeView : CycleView = {
+        let cyView = CycleView.createCycleView()
+        return cyView
+    }()
+    // 游戏推荐View
+    private lazy var gameView : RecommerGameView = {
+        let gView = RecommerGameView.CreaterecommerGameView()
+        gView.frame = CGRect(x: 0, y: -gameViewH, width: KScreenW, height: gameViewH)
+        return gView
+    }()
+    
     lazy var collectionView : UICollectionView = {
         
         // 流水布局
@@ -57,22 +69,37 @@ class RecommerController: UIViewController {
 
 extension RecommerController{
     private func requestData(){
+        // 请求推荐标签的数据
         HomeViewModel.loadRecommerData { (modelArray) in
             self.DataSourceArray = modelArray
             self.collectionView.reloadData()
+            self.gameView.gameGroupData = modelArray
+        }
+        // 请求轮播图的数据
+       HomeViewModel.loadCycleData { (responeArray) in
+            self.cycyleArrayData = responeArray
+            self.cyclyeView.modelArray = self.cycyleArrayData
         }
     }
 }
 
 
+// MARK: - UISetting
 extension RecommerController{
     private func setUI(){
         
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.autoresizingMask = [.FlexibleWidth,.FlexibleHeight]
-        collectionView.contentInset = UIEdgeInsetsMake(0, 0, 160, 0)
+//        collectionView.autoresizingMask = [.FlexibleWidth,.FlexibleHeight]
+        collectionView.contentInset = UIEdgeInsetsMake(CycleViewH + gameViewH, 0, 160, 0)
+        // 添加显示推荐标签模块的空间CollectionView
         view.addSubview(collectionView)
+        
+        // 添加无限滚动View
+        collectionView.addSubview(self.cyclyeView)
+        // 添加gameView
+        collectionView.addSubview(gameView)
+        
     }
 }
 

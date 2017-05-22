@@ -10,5 +10,8 @@ import UIKit
 
 let KScreenW : CGFloat = UIScreen.mainScreen().bounds.width
 let KScreenH = UIScreen.mainScreen().bounds.height
+let CycleViewH = KScreenW * 3 / 8
+let gameViewH : CGFloat = 90
+
 
 

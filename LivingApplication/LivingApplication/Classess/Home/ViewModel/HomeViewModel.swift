@@ -20,6 +20,26 @@ class HomeViewModel: NSObject {
 }
 
 extension HomeViewModel{
+    
+    // 轮播图的数据请求
+    class func loadCycleData(CallBack : (responeArray : [CycleModel]) ->()){
+        
+        var cycleArray : [CycleModel] = [CycleModel]()
+        
+        
+        NetworkTool.netWorkToolRequestData(.GetMethod, URL: "http://www.douyutv.com/api/v1/slide/6?version=2.4.9.1") { (responeValue) in
+            guard let dicValue = responeValue as? [String : AnyObject] else {return}
+            guard let ArrayData = dicValue["data"] as? [[String : AnyObject]] else {return}
+            for dictionary in ArrayData {
+                let cycleModel = CycleModel(dic: dictionary)
+                cycleArray.append(cycleModel)
+//                print(cycleModel.pic_url)
+            }
+            CallBack(responeArray: cycleArray)
+        }
+        
+    }
+    
     // 首页推荐模块的数据请求
     class func loadRecommerData(finishCallBack : (modelArray : [AnchorGorup]) -> ()){
         
