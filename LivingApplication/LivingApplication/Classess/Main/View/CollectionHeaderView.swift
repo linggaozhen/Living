@@ -14,6 +14,7 @@ class CollectionHeaderView: UICollectionReusableView {
     
     @IBOutlet weak var tagName: UILabel!
     
+    @IBOutlet weak var moreButton: UIButton!
     var groupMoel : AnchorGorup = AnchorGorup() {
         didSet{
             tagName.text = groupMoel.tag_name
@@ -21,6 +22,9 @@ class CollectionHeaderView: UICollectionReusableView {
         }
     }
     
+    class func createHeaderView() -> CollectionHeaderView {
+        return (NSBundle.mainBundle().loadNibNamed("CollectionHeaderView", owner: nil, options: nil).first as? CollectionHeaderView)!
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

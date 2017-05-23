@@ -22,8 +22,10 @@ class HomeViewController: UIViewController {
         // 通过一个数组保存控制器
         var controllerArray = [UIViewController]()
         let recommerController = RecommerController()
+        let gameViewController = GameViewController()
         controllerArray.append(recommerController)
-        for i in 0...2 {
+        controllerArray.append(gameViewController)
+        for i in 0...1 {
           let viewController = UIViewController()
             viewController.view.backgroundColor = UIColor.init(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)))
             controllerArray.append(viewController)

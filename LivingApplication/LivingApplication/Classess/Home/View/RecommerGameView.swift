@@ -4,7 +4,7 @@
 //
 //  Created by ioser on 17/5/22.
 //  Copyright © 2017年 ioser. All rights reserved.
-//
+//------------------首页左右滚动的游戏View-----------------
 
 import UIKit
 
@@ -14,6 +14,15 @@ class RecommerGameView: UIView {
     
     @IBOutlet weak var gameColletionView: UICollectionView!
     
+    // 游戏控制器传进来的数据
+    var gameControllerData : [GameModel]? {
+        didSet{
+            
+            gameColletionView.reloadData()
+        }
+    }
+    
+    // 推荐控制器传递进来的数据
     var gameGroupData : [AnchorGorup]?{
         didSet{
             gameGroupData?.removeFirst()

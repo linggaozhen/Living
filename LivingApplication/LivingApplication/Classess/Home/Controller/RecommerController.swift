@@ -73,6 +73,7 @@ extension RecommerController{
         HomeViewModel.loadRecommerData { (modelArray) in
             self.DataSourceArray = modelArray
             self.collectionView.reloadData()
+            // 给游戏传递数据
             self.gameView.gameGroupData = modelArray
         }
         // 请求轮播图的数据

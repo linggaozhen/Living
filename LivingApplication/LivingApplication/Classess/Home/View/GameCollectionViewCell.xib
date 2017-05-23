@@ -2,49 +2,54 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="GameCollectionViewCell" customModule="LivingApplication" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="102" height="82"/>
+        <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="GameCollectionViewCell" customModule="LivingApplication" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="213" height="131"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="102" height="82"/>
+                <rect key="frame" x="0.0" y="0.0" width="213" height="131"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GG2-1K-7YO">
-                        <rect key="frame" x="0.0" y="51" width="102" height="21"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="21" id="Nnd-n2-LgL"/>
-                        </constraints>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GG2-1K-7YO">
+                        <rect key="frame" x="33" y="66" width="36" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mX8-Da-oFA">
-                        <rect key="frame" x="36" y="15" width="31" height="31"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mX8-Da-oFA">
+                        <rect key="frame" x="26" y="8" width="50" height="50"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="mX8-Da-oFA" secondAttribute="height" multiplier="1:1" id="Hg6-L9-OIW"/>
+                            <constraint firstAttribute="height" constant="50" id="ABB-vl-JRy"/>
+                            <constraint firstAttribute="width" constant="50" id="vxN-pt-opF"/>
                         </constraints>
                     </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nYf-Ev-mkz">
+                        <rect key="frame" x="0.0" y="131" width="213" height="1"/>
+                        <color key="backgroundColor" red="0.73725490199999999" green="0.73725490199999999" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="HDh-hy-Xp5"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="GG2-1K-7YO" secondAttribute="bottom" constant="10" id="0A6-8F-JPY"/>
-                <constraint firstAttribute="trailing" secondItem="GG2-1K-7YO" secondAttribute="trailing" id="2QA-o8-bWm"/>
-                <constraint firstItem="GG2-1K-7YO" firstAttribute="top" secondItem="mX8-Da-oFA" secondAttribute="bottom" constant="5" id="P72-jc-nkq"/>
-                <constraint firstItem="mX8-Da-oFA" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="XkJ-tn-3ev"/>
-                <constraint firstItem="mX8-Da-oFA" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="cub-ve-Mg6"/>
-                <constraint firstItem="GG2-1K-7YO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="de9-bV-4NI"/>
+                <constraint firstAttribute="trailing" secondItem="nYf-Ev-mkz" secondAttribute="trailing" id="B5J-M6-Nxr"/>
+                <constraint firstAttribute="bottom" secondItem="nYf-Ev-mkz" secondAttribute="bottom" constant="-1" id="QEt-dt-RrQ"/>
+                <constraint firstItem="mX8-Da-oFA" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="T6o-5X-J7p"/>
+                <constraint firstItem="GG2-1K-7YO" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="YdW-Ww-pe6"/>
+                <constraint firstItem="GG2-1K-7YO" firstAttribute="top" secondItem="mX8-Da-oFA" secondAttribute="bottom" constant="8" id="f69-9O-ds3"/>
+                <constraint firstItem="nYf-Ev-mkz" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="jzN-Wh-aeg"/>
+                <constraint firstItem="mX8-Da-oFA" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" constant="-8" id="pQh-7x-67X"/>
             </constraints>
-            <size key="customSize" width="102" height="82"/>
+            <size key="customSize" width="213" height="131"/>
             <connections>
                 <outlet property="iconImageView" destination="mX8-Da-oFA" id="SRV-p9-cb8"/>
                 <outlet property="titleLabel" destination="GG2-1K-7YO" id="MBN-BW-PXp"/>
             </connections>
-            <point key="canvasLocation" x="336" y="326"/>
+            <point key="canvasLocation" x="391.5" y="350.5"/>
         </collectionViewCell>
     </objects>
 </document>

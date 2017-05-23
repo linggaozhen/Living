@@ -38,6 +38,8 @@ class CycleView: UIView {
     
     override func awakeFromNib() {
         
+        self.autoresizingMask = .None
+        
         // 设置collectionView属性
         CollectionView.pagingEnabled = true
         CollectionView.registerNib(UINib(nibName: "CycleCollectionViewCell",bundle: nil), forCellWithReuseIdentifier: cycleViewCellID)

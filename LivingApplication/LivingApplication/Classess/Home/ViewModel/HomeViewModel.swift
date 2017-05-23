@@ -17,6 +17,7 @@ import UIKit
 
 class HomeViewModel: NSObject {
     
+    
 }
 
 extension HomeViewModel{
@@ -112,3 +113,23 @@ extension HomeViewModel{
     }
 
 }
+
+// MARK: - 首页游戏数据的请求
+extension HomeViewModel {
+    
+    class func loadGameData(finishCallBack : (modelArray : [GameModel]) ->())  {
+        var gModelArray : [GameModel] = [GameModel]()
+        NetworkTool.netWorkToolRequestData(.GetMethod, URL: "http://capi.douyucdn.cn/api/v1/getColumnDetail?shortName=game") { (responeValue) in
+            guard let dicValue = responeValue as? [String : AnyObject] else {return}
+            guard let dataArray = dicValue["data"] as? [[String : AnyObject]] else {return}
+            for dictionary in dataArray {
+                let gmodel = GameModel.init(dic: dictionary)
+                gModelArray.append(gmodel)
+            }
+            
+            finishCallBack(modelArray: gModelArray)
+        }
+    }
+}
+
+
